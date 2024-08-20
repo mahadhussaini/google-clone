@@ -33,7 +33,7 @@ const SearchInput = () => {
       <div className="flex items-center gap-2 sm:gap-3">
         {searchQuery && (
           <IoMdClose
-            size={20} // Reduce the size for mobile
+            size={16}
             color="#70757a"
             className="cursor-pointer"
             onClick={() => setSearchQuery("")}
