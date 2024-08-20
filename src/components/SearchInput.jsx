@@ -16,36 +16,38 @@ const SearchInput = () => {
       navigate(`/${searchQuery}/${1}`);
     }
   };
+
   return (
     <div
       id="searchBox"
-      className="h-[46px] w-full md:w-[584px] flex items-center gap-3 px-4 border border-[#dfe1e5] rounded-3xl hover:bg-white hover:shadow-c hover:border-0 focus-within:shadow-c focus-within:border-0"
+      className="h-12 w-full md:w-[584px] flex items-center gap-2 md:gap-3 px-3 md:px-4 border border-[#dfe1e5] rounded-full hover:bg-white hover:shadow-md hover:border-transparent focus-within:shadow-md focus-within:border-transparent"
     >
-      <AiOutlineSearch size={18} color="#9aa0a6" />
+      <AiOutlineSearch size={20} color="#9aa0a6" />
       <input
         type="text"
         onChange={(e) => setSearchQuery(e.target.value)}
         onKeyUp={searchQueryHandler}
         value={searchQuery}
         autoFocus
-        className="grow outline-0 text-black/[0.87]"
+        className="flex-1 outline-none text-black/[0.87] text-sm md:text-base placeholder-gray-500"
+        placeholder="Search..."
       />
-      <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex items-center gap-2 md:gap-3">
         {searchQuery && (
           <IoMdClose
-            size={16}
+            size={24}
             color="#70757a"
             className="cursor-pointer"
             onClick={() => setSearchQuery("")}
           />
         )}
         <img
-          className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer"
+          className="h-6 w-6 md:h-5 md:w-5 cursor-pointer"
           src={MicIcon}
           alt="Mic Icon"
         />
         <img
-          className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer"
+          className="h-6 w-6 md:h-5 md:w-5 cursor-pointer"
           src={ImageIcon}
           alt="Image Icon"
         />
