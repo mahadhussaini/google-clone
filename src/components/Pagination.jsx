@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 import Logo from "../assets/google-pagination-logo.png";
 import { pagination } from "../utils/Constants";
@@ -36,7 +36,15 @@ const Pagination = ({ queries }) => {
             </span>
           </div>
         )}
-        <img className="w-[250px] md:w-[300px]" src={Logo} />
+
+        <Link to="/">
+          <img
+            className="w-[250px] md:w-[300px] cursor-pointer"
+            src={Logo}
+            alt="Google Logo"
+          />
+        </Link>
+
         {queries.nextPage && (
           <div
             className="absolute right-[-30px] md:right-[-40px] top-[10px]"
